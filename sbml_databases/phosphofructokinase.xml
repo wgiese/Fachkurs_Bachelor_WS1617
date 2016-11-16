@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by libAntimony version v2.8.0 on 2016-11-16 16:43 with libSBML version 5.13.0. -->
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model id="pfk" name="pfk">
+    <listOfCompartments>
+      <compartment id="cytosol" spatialDimensions="3" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="ADP" compartment="cytosol" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="ATP" compartment="cytosol" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="F6P" compartment="cytosol" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="FBP" compartment="cytosol" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="PFK_enzyme" compartment="cytosol" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction id="PFK_reaction" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="F6P" stoichiometry="1" constant="true"/>
+          <speciesReference species="ATP" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="FBP" stoichiometry="1" constant="true"/>
+          <speciesReference species="ADP" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PFK_enzyme"/>
+        </listOfModifiers>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
